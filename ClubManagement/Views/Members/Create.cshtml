@@ -1,0 +1,105 @@
+@model ClubManagement.Models.Member
+
+@{
+ ViewData["Title"] = "Thêm Thành Viên";
+}
+
+<div class="create-card">
+
+ <div class="text-center mb-4">
+ <h1> Thêm Thành Viên</h1>
+ <p class="text-muted">
+ Nhập thông tin thành viên CLB Văn Nghệ
+ </p>
+ </div>
+
+ <form asp-action="Create">
+
+ <div asp-validation-summary="ModelOnly"
+ class="alert alert-danger">
+ </div>
+
+ <div class="mb-3">
+ <label asp-for="FullName" class="form-label">
+ Họ Và Tên
+ </label>
+
+ <input asp-for="FullName"
+ class="form-control" />
+
+ <span asp-validation-for="FullName"
+ class="text-danger"></span>
+ </div>
+
+ <div class="mb-3">
+ <label asp-for="Email" class="form-label">
+ Email
+ </label>
+
+ <input asp-for="Email"
+ class="form-control" />
+
+ <span asp-validation-for="Email"
+ class="text-danger"></span>
+ </div>
+
+ <div class="mb-3">
+ <label asp-for="Phone" class="form-label">
+ Số Điện Thoại
+ </label>
+
+ <input asp-for="Phone"
+ class="form-control" />
+
+ <span asp-validation-for="Phone"
+ class="text-danger"></span>
+ </div>
+
+ <div class="mb-3">
+ <label asp-for="Position" class="form-label">
+ Chức Vụ
+ </label>
+
+ <select asp-for="Position" class="form-select">
+ <option>Chủ nhiệm</option>
+ <option>Phó chủ nhiệm</option>
+ <option>Ban truyền thông</option>
+ <option>Ban văn nghệ</option>
+ <option>Thành viên</option>
+ </select>
+ </div>
+
+ <div class="mb-3">
+ <label asp-for="ClubId" class="form-label">
+ Mã CLB
+ </label>
+
+ <input asp-for="ClubId"
+ value="1"
+ class="form-control"
+ readonly />
+ </div>
+
+ <div class="mt-4">
+
+ <button type="submit"
+ class="btn btn-success">
+ Lưu Thành Viên
+ </button>
+
+ <a asp-action="Index"
+ class="btn btn-secondary">
+ ↩ Quay Lại
+ </a>
+
+ </div>
+
+ </form>
+
+</div>
+
+@section Scripts {
+ @{
+ await Html.RenderPartialAsync("_ValidationScriptsPartial");
+ }
+}

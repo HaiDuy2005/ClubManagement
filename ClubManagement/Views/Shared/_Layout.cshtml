@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#26132f" />
+
+    <title>@ViewData["Title"] - CLB Văn Nghệ</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ClubManagement.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container nav-shell">
+
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <span class="brand-mark">CV<span>✳</span></span>
+                    <span class="brand-copy">
+                        CLB VĂN NGHỆ
+                        <small>STUDENT CREATIVE CLUB</small>
+                    </span>
+                </a>
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarContent"
+                        aria-controls="navbarContent"
+                        aria-expanded="false"
+                        aria-label="Mở menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                        <li class="nav-item">
+                            <a class="nav-link nav-home-back"
+                               asp-controller="Home"
+                               asp-action="Index"
+                               title="Quay về trang chủ">
+                                <span aria-hidden="true">⌂</span>
+                                <span>Trang chủ</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-controller="Home"
+                               asp-action="Activities">
+                                Hoạt động
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-controller="MemberRegistration"
+                               asp-action="Create">
+                                Tham gia CLB
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-controller="Attendance"
+                               asp-action="Create">
+                                Điểm danh
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-controller="Contact"
+                               asp-action="Create">
+                                Liên hệ
+                            </a>
+                        </li>
+
+                        <li class="nav-item ms-lg-3">
+                            <a class="nav-link nav-admin"
+                               asp-controller="Account"
+                               asp-action="Login">
+                                <span>Quản trị</span>
+                                <span aria-hidden="true">↗</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="site-main">
+        <div class="container page-container">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-main">
+
+                <div>
+                    <div class="footer-brand">
+                        <span class="footer-brand-mark">CV✳</span>
+                        CLB VĂN NGHỆ
+                    </div>
+
+                    <p class="footer-copy">
+                        Nơi đam mê gặp gỡ, ý tưởng thành hình và mỗi sinh viên
+                        tìm thấy sân khấu của riêng mình.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <span class="footer-heading">KHÁM PHÁ</span>
+
+                    <a asp-controller="Home" asp-action="Activities">
+                        Hoạt động
+                    </a>
+
+                    <a asp-controller="MemberRegistration" asp-action="Create">
+                        Đăng ký thành viên
+                    </a>
+
+                    <a asp-controller="Contact" asp-action="Create">
+                        Liên hệ câu lạc bộ
+                    </a>
+                </div>
+
+                <div class="footer-contact">
+                    <span class="footer-heading">KẾT NỐI VỚI CHÚNG TÔI</span>
+
+                    <p>Email: clbvannghe@edu.vn</p>
+                    <p>Hệ thống quản lý CLB Văn Nghệ</p>
+
+                    <a asp-controller="Account" asp-action="Login">
+                        Khu vực quản trị ↗
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <span>© @DateTime.Now.Year CLB Văn Nghệ Sinh Viên</span>
+                <span>ĐƯỢC TẠO NÊN TỪ ĐAM MÊ <b>✳</b></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

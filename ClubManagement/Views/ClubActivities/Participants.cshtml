@@ -1,0 +1,44 @@
+@model IEnumerable<ClubManagement.Models.ActivityRegistration>
+
+<h1 class="mb-4">
+ Danh Sách Sinh Viên Tham Gia
+</h1>
+
+<table class="table table-striped">
+
+ <thead class="table-dark">
+
+ <tr>
+ <th>Họ Tên</th>
+ <th>MSSV</th>
+ <th>Lớp</th>
+ <th>Email</th>
+ </tr>
+
+ </thead>
+
+ <tbody>
+
+ @foreach (var item in Model)
+ {
+ <tr>
+
+ <td>@item.FullName</td>
+
+ <td>@item.StudentCode</td>
+
+ <td>@item.ClassName</td>
+
+ <td>@item.Email</td>
+
+ </tr>
+ }
+
+ </tbody>
+
+</table>
+
+<a asp-action="Index"
+ class="btn btn-secondary">
+ ← Quay Lại
+</a>

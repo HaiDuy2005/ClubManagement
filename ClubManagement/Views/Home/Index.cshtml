@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<section class="festival-hero">
+    <div class="festival-hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> CÂU LẠC BỘ VĂN NGHỆ SINH VIÊN</div>
+        <h1>Chất riêng của bạn.<br /><span>Sân khấu của chúng ta.</span></h1>
+        <p class="festival-hero-lead">Nơi những giọng ca, bước nhảy và ý tưởng gặp nhau để tạo nên những khoảnh khắc không thể quên.</p>
+        <div class="festival-hero-actions">
+            <a asp-controller="Home" asp-action="Activities" class="btn btn-festival-primary">Khám phá hoạt động <span aria-hidden="true">↗</span></a>
+            <a asp-controller="MemberRegistration" asp-action="Create" class="hero-text-link">Trở thành thành viên <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-footnote"><span class="hero-footnote-line"></span> HỌC HỎI · BIỂU DIỄN · KẾT NỐI</div>
+    </div>
+    <div class="festival-hero-art" role="img" aria-label="Không khí sân khấu và khán giả trong một chương trình âm nhạc">
+        <div class="hero-art-frame"></div>
+        <div class="hero-art-stamp"><span>LIVE</span><strong>YOUR<br />MOMENT</strong><i>✳</i></div>
+        <div class="hero-art-caption"><span>01 / CLB VĂN NGHỆ</span><span>ĐAM MÊ THÀNH SÂN KHẤU</span></div>
+    </div>
+    <div class="hero-index" aria-hidden="true">01—03</div>
+</section>
+
+<section class="festival-stats" aria-label="Thống kê câu lạc bộ">
+    <div class="stats-intro"><span class="section-kicker">CHÚNG TA ĐANG LỚN LÊN</span><p>Mỗi người một màu sắc.<br /><strong>Cùng nhau thành một sân khấu.</strong></p></div>
+    <div class="festival-stat"><span class="stat-number">@(ViewBag.TotalMembers ?? 0)<sup>+</sup></span><span class="stat-label">Thành viên</span><span class="stat-note">Cùng chung đam mê</span></div>
+    <div class="festival-stat"><span class="stat-number">@(ViewBag.TotalActivities ?? 0)<sup>+</sup></span><span class="stat-label">Hoạt động</span><span class="stat-note">Cơ hội để tỏa sáng</span></div>
+    <div class="festival-stat"><span class="stat-number">@(ViewBag.TotalClubs ?? 1)</span><span class="stat-label">Câu lạc bộ</span><span class="stat-note">Một cộng đồng sáng tạo</span></div>
+</section>
+
+<section class="festival-program-section">
+    <div class="section-topline"><span class="section-kicker">KHÔNG CHỈ LÀ MỘT CÂU LẠC BỘ</span><span class="section-side-note">TÌM PHẦN CỦA BẠN TRONG ĐÓ</span></div>
+    <div class="program-heading-row"><h2>Một nơi để thử.<br /><em>Một nơi để tỏa sáng.</em></h2><p>Dù bạn đang đứng trước sân khấu hay mới bắt đầu tập luyện, hành trình của bạn luôn có chỗ ở đây.</p></div>
+    <div class="festival-feature-grid">
+        <article class="festival-feature feature-coral">
+            <div class="feature-top"><span>01 / CONNECT</span><span class="feature-symbol">↗</span></div>
+            <div class="feature-icon icon-people" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div><h3>Tìm đúng cộng đồng</h3><p>Gặp những người yêu âm nhạc, vũ đạo và biểu diễn. Cùng luyện tập, chia sẻ ý tưởng và tạo nên tình bạn mới.</p><a asp-controller="MemberRegistration" asp-action="Create" class="feature-link">Tham gia CLB <span>→</span></a></div>
+        </article>
+        <article class="festival-feature feature-lilac">
+            <div class="feature-top"><span>02 / EXPERIENCE</span><span class="feature-symbol">✳</span></div>
+            <div class="feature-icon icon-stage" aria-hidden="true"><span></span><span></span><span></span><i></i></div>
+            <div><h3>Biến đam mê thành trải nghiệm</h3><p>Theo dõi chương trình, đăng ký hoạt động và góp mặt trong những sự kiện văn hóa của trường.</p><a asp-controller="Home" asp-action="Activities" class="feature-link">Xem lịch hoạt động <span>→</span></a></div>
+        </article>
+        <article class="festival-feature feature-yellow">
+            <div class="feature-top"><span>03 / GROW</span><span class="feature-symbol">↗</span></div>
+            <div class="feature-icon icon-star" aria-hidden="true">✳</div>
+            <div><h3>Ghi lại hành trình</h3><p>Gửi yêu cầu điểm danh sau hoạt động và bổ sung minh chứng theo hướng dẫn của câu lạc bộ.</p><a asp-controller="Attendance" asp-action="Create" class="feature-link">Gửi điểm danh <span>→</span></a></div>
+        </article>
+    </div>
+</section>
+
+<section class="festival-join-banner">
+    <div class="join-mark" aria-hidden="true">CVN<span>✳</span></div>
+    <div class="join-copy"><span class="section-kicker">SÂN KHẤU ĐANG CHỜ BẠN</span><h2>Đừng chỉ đứng dưới khán đài.</h2><p>Hãy mang màu sắc của bạn đến với CLB Văn Nghệ.</p></div>
+    <a asp-controller="MemberRegistration" asp-action="Create" class="btn btn-join">Đăng ký ngay <span>↗</span></a>
+</section>
